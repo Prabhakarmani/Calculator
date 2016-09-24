@@ -1,5 +1,7 @@
 package application;
-import java.math.*;
+//import java.math.*;
+
+
 public class CALCULATOR extends javax.swing.JFrame {
 private boolean zerodisp;
 private boolean decdisp;
@@ -8,9 +10,13 @@ private boolean decdisp;
    private double out;
    private boolean dgrrad;
    private boolean shift;
+   private byte op;
    
     public CALCULATOR() {
-        initComponents();
+     
+     setTitle("CALCULATOR");
+     setResizable(false);
+     initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -629,7 +635,7 @@ private boolean decdisp;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void display1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_display1ActionPerformed
@@ -647,7 +653,39 @@ private boolean decdisp;
     }//GEN-LAST:event_threeActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+    if(op==0)
+    {
+        ina=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    else
+    {
+        inb=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    if(op==1)
+    {
+        ina=(ina+inb);
+    }
+    if(op==2)
+    {
+        ina=(ina-inb);
+    }
+    if(op==3)
+    {
+        ina=(ina*inb);
+    }
+    if(op==4)
+    {
+        ina=(ina/inb);
+    }
+    if(op==5)
+    {
+        ina=(ina*inb /100);
+    }
+    display1.setText("0");
+    display2.setText(String.valueOf(ina) + "+");
+    op=1;
+    decdisp=false;
+    zerodisp=false;
     }//GEN-LAST:event_addActionPerformed
 
     private void eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightActionPerformed
@@ -659,7 +697,39 @@ private boolean decdisp;
     }//GEN-LAST:event_eightActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        // TODO add your handling code here:
+         if(op==0)
+    {
+        ina=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    else
+    {
+        inb=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    if(op==1)
+    {
+        ina=(ina+inb);
+    }
+    if(op==2)
+    {
+        ina=(ina-inb);
+    }
+    if(op==3)
+    {
+        ina=(ina*inb);
+    }
+    if(op==4)
+    {
+        ina=(ina/inb);
+    }
+    if(op==5)
+    {
+        ina=(ina*inb /100);
+    }
+    display1.setText("0");
+    display2.setText(String.valueOf(ina) + "4");
+    op=4;
+    decdisp=false;
+    zerodisp=false;
     }//GEN-LAST:event_divideActionPerformed
 
     private void memorydisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memorydisplayActionPerformed
@@ -675,7 +745,54 @@ private boolean decdisp;
     }//GEN-LAST:event_memorysaveActionPerformed
 
     private void resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultActionPerformed
-        // TODO add your handling code here:
+       inb=Double.parseDouble(String.valueOf(display1.getText()));
+       if(op==0)
+       {
+           out=inb;
+           display2.setText(String.valueOf(inb));
+       } else {
+       }
+         if(op==1)
+       {
+           out=ina+inb;
+           display2.setText(display2.getText() + String.valueOf(inb));
+       }
+           if(op==2)
+       {
+           out=ina-inb;
+           display2.setText(display2.getText() + String.valueOf(inb));
+       }
+             if(op==3)
+       {
+           out=ina*inb;
+           display2.setText(display2.getText()+ String.valueOf(inb));
+       }
+               if(op==4)
+       {
+           out=ina/inb;
+           display2.setText(display2.getText() + String.valueOf(inb));
+       }
+                 if(op==5)
+       {
+           out=ina*inb / 100;
+           display2.setText(display2.getText() + String.valueOf(inb)+ ")");
+       }
+                 if(out> -1000000 && out<1000000)
+                 {
+                     display1.setText(String.valueOf(out));
+                 }
+                 else
+                 {
+                     display1.setText("Error");
+                 }
+                  ina=0;
+                  inb=0;
+                  out=0;
+                  decdisp=false;
+                  zerodisp=false;
+                  
+                          
+                       
     }//GEN-LAST:event_resultActionPerformed
 
     private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
@@ -705,7 +822,39 @@ private boolean decdisp;
     }//GEN-LAST:event_decimalActionPerformed
 
     private void subtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractActionPerformed
-        // TODO add your handling code here:
+         if(op==0)
+    {
+        ina=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    else
+    {
+        inb=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    if(op==1)
+    {
+        ina=(ina+inb);
+    }
+    if(op==2)
+    {
+        ina=(ina-inb);
+    }
+    if(op==3)
+    {
+        ina=(ina*inb);
+    }
+    if(op==4)
+    {
+        ina=(ina/inb);
+    }
+    if(op==5)
+    {
+        ina=(ina*inb /100);
+    }
+    display1.setText("0");
+    display2.setText(String.valueOf(ina) + "-");
+    op=2;
+    decdisp=false;
+    zerodisp=false;
     }//GEN-LAST:event_subtractActionPerformed
 
     private void twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoActionPerformed
@@ -741,11 +890,50 @@ private boolean decdisp;
     }//GEN-LAST:event_sixActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        // TODO add your handling code here:
+           if(op==0)
+    {
+        ina=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    else
+    {
+        inb=Double.parseDouble(String.valueOf(display1.getText()));
+    }
+    if(op==1)
+    {
+        ina=(ina+inb);
+    }
+    if(op==2)
+    {
+        ina=(ina-inb);
+    }
+    if(op==3)
+    {
+        ina=(ina*inb);
+    }
+    if(op==4)
+    {
+        ina=(ina/inb);
+    }
+    if(op==5)
+    {
+        ina=(ina*inb /100);
+    }
+    display1.setText("0");
+    display2.setText(String.valueOf(ina) + "*");
+    op=3;
+    decdisp=false;
+    zerodisp=false;
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void percentageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_percentageActionPerformed
-        // TODO add your handling code here:
+     ina=Double.parseDouble(String.valueOf(display1.getText()));
+     display1.setText("0");
+     display2.setText(String.valueOf(ina) + "%");
+     
+     decdisp=false;
+     zerodisp=false;
+     op=5;
+     
     }//GEN-LAST:event_percentageActionPerformed
 
     private void nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineActionPerformed
@@ -805,11 +993,14 @@ private boolean decdisp;
     }//GEN-LAST:event_expActionPerformed
 
     private void tanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanActionPerformed
-         inb=Double.parseDouble(String.valueOf(display1.getText()));
-        if(!shift)
-        {
+        inb=Double.parseDouble(String.valueOf(display1.getText()));
+        if(!shift){
+        if(!dgrrad)
+            {
             display2.setText("tan(" +String.valueOf(inb)+")");
             inb=inb*0.0174532925;
+        }
+        out=Math.tan(inb);
         }
         else
         {
@@ -818,12 +1009,14 @@ private boolean decdisp;
         }
         display1.setText(String.valueOf(out));
         out=0;
+        op=0;
+        
     }//GEN-LAST:event_tanActionPerformed
 
     private void underrootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_underrootActionPerformed
      inb=Double.parseDouble(String.valueOf(display1.getText()));
-     oout=Math..sqrt(inb);
-     dispplay1.setText("√" + String.valueOf(inb));
+     out=Math.sqrt(inb);
+     display1.setText("√" + String.valueOf(inb));
      out=0;
     }//GEN-LAST:event_underrootActionPerformed
 
@@ -840,11 +1033,14 @@ private boolean decdisp;
     }//GEN-LAST:event_logActionPerformed
 
     private void cosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosActionPerformed
-       inb=Double.parseDouble(String.valueOf(display1.getText()));
-        if(!shift)
-        {
+         inb=Double.parseDouble(String.valueOf(display1.getText()));
+        if(!shift){
+        if(!dgrrad)
+            {
             display2.setText("cos(" +String.valueOf(inb)+")");
             inb=inb*0.0174532925;
+        }
+        out=Math.cos(inb);
         }
         else
         {
@@ -853,14 +1049,19 @@ private boolean decdisp;
         }
         display1.setText(String.valueOf(out));
         out=0;
+        op=0;
+        
     }//GEN-LAST:event_cosActionPerformed
 
     private void sinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinActionPerformed
         inb=Double.parseDouble(String.valueOf(display1.getText()));
-        if(!shift)
-        {
+        if(!shift){
+        if(!dgrrad)
+            {
             display2.setText("sin(" +String.valueOf(inb)+")");
             inb=inb*0.0174532925;
+        }
+        out=Math.sin(inb);
         }
         else
         {
@@ -869,6 +1070,7 @@ private boolean decdisp;
         }
         display1.setText(String.valueOf(out));
         out=0;
+        op=0;
         
     }//GEN-LAST:event_sinActionPerformed
 
@@ -909,34 +1111,8 @@ private boolean decdisp;
       
     }//GEN-LAST:event_shiiftMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CALCULATOR.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CALCULATOR.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CALCULATOR.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CALCULATOR.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() 
         {
             public void run() {
